@@ -1,9 +1,9 @@
 Version Control is a means of keeping track of computer files and changes made to these files, who made those changes, and when the changes were made with annotations. An example of a version control system is GIT.
-Among the many benefits of a version control system is the ability to revert bac to a previous version of the file and it allows for many people to collaborate on a project. After each person is satisfied with their work, the separate parts can then be merged together to form a complete project.
-A sofware development team building for example a web application might have a UI/UX person upload a design to the team's repository on GitHub, where the developers might try to implement the UI parts using HTML, while another member might be handling the styling using CSS and yet another member might be writing the JavaScript code to give the application its interactivity.
+Among the many benefits of a version control system is the ability to revert back to a previous version of the file and it allows for many people to collaborate on a project. After each person is satisfied with their work, the separate parts can then be merged together to form a complete project.
+A sofware development team building, for example, a web application might have a UI/UX person upload a design to the team's repository on GitHub, where the developers might try to implement the UI parts using HTML, while another member might be handling the styling using CSS and yet another member might be writing the JavaScript code to give the application its interactivity.
 The following command:
     git status
-shows the current state of the directory's files if any changes or modifications have taken place. If it has the command:
+shows the current state of the directory's files if any changes or modifications have taken place. If it has, the command:
     git add .
 Will stage all the changes made to any of the files in the current directory and its sub-directories. The next step is to commit the changes using:
     git commit -m "<any message to state the reason for the change>"

@@ -9,8 +9,10 @@ class Program
 
         Random randomGenerator = new Random();
         int number = randomGenerator.Next(1, 100);
-        int magicNumber = 5;
-        
+        // int magicNumber = number;
+
+        Console.WriteLine(number);
+
         Console.WriteLine("Guess a number: ");
         string response = Console.ReadLine();
         int responeNumber = int.Parse(response);

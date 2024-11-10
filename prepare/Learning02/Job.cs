@@ -9,6 +9,6 @@ public class Job
 
     public void Display()
     {
-        System.Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}.");
+        System.Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
     }
 }

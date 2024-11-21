@@ -1,13 +1,17 @@
 using System;
+using System.Collections.Generic;
 
 public class Entry
 {
-    string _date = DateTime.Now.ToShortDateString();
-    string _promptText;
-    string _entryText;
+    public string _date;
+    public string _promptText;
+    public string _entryText;
 
     public void Display()
     {
-        
+        Console.Write($"{_date} - ");
+        Console.WriteLine($"{_promptText}");
+        Console.WriteLine($"{_entryText}");
     }
+    
 }

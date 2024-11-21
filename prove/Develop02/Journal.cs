@@ -1,37 +1,28 @@
 using System;
+using System.Collections.Generic;
 
 public class Journal
 {
-    // public List<Entry> _entries = new List<Entry>();
+    public List<Entry> _entries;
 
-    // public void AddEntry(Entry newEntry)
-    // {
-
-    //     foreach(Job job in _jobs)
-    //     {
-    //         job.Display();
-    //     }
-
-    // }
-
+    public void AddEntry(Entry newEntry)
+    {
+         _entries.Add(newEntry);
+    }
     public void DisplayAll()
     {
-
-        System.Console.WriteLine("Hello Ruler");
-
+        foreach(Entry entry in _entries)
+        {
+            entry.Display();
+        }
     }
 
-    public void SaveToFile()
+    public void SaveToFile(string file)
     {
-
-        System.Console.WriteLine("Rule2");
-
+        string fileName = "journal.txt";
+        using (StreamWriter outputFile = new StreamWriter(fileName)){
+            outputFile.WriteLine();
+        }
     }
-
-    public void LoadFromFile()
-    {
-
-       System.Console.WriteLine("Rule3");
-
-    }
+    
 }

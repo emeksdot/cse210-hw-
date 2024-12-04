@@ -46,5 +46,19 @@ public class Order
     {
 
     }
+
+    public string GetPackingLabel()
+    {
+        string packingLabel = "";
+        foreach (var product in _products)
+        {
+           packingLabel += product.GetName() + " " + product.GetId();
+        }
+        return packingLabel;
+    }
+    public string GetShippingLabel()
+    {
+        return "";
+    }
     
 }

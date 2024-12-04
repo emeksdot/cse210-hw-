@@ -20,34 +20,42 @@ public class Video
 
     }
 
-    
+    //_____________Title__________
     public string GetTitle()
     {
         return _title;
     }
-    public string GetAuthor()
-    {
-        return _author;
-    }
-    public int GetLength()
-    {
-        return _length;
-    }
-
-
 
     public void SetTitle(string title)
     {
         _title = title;
     }
+
+    //_____________Author___________
+
+    public string GetAuthor()
+    {
+        return _author;
+    }
+
     public void SetAuthor(string author)
     {
         _author = author;
     }
+    //____________Length____________
+    public int GetLength()
+    {
+        return _length;
+    }
+
     public void SetLength(int length)
     {
         _length = length;
     }
+
+    //
+
+
 
     public int NumberOfComments()
     {

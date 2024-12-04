@@ -28,22 +28,34 @@ public class Address
     {
         _streetNumber = streetNumber;
     }
-    public string GetStreet(){}
+    public string GetStreet()
+    {
+        return _street;
+    }
     public void SetStreet(string street)
     {
         _street = street;
     }
-    public string GetCity(){}
+    public string GetCity()
+    {
+        return _city;
+    }
     public void SetCity(string city)
     {
         _city = city;
     }
-    public string GetState(){}
+    public string GetState()
+    {
+        return _state;
+    }
     public void SetState(string state)
     {
         _state = state;
     }
-    public string GetCountry(){}
+    public string GetCountry()
+    {
+        return _country;
+    }
     public void SetCountry( string country)
     {
          _country = country;
@@ -63,10 +75,7 @@ public class Address
 
     public void DisplayAddress()
     {
-        System.Console.WriteLine($"{_streetNumber} {_street}");
-        System.Console.WriteLine($"{_city}");
-        System.Console.WriteLine($"{_state}");
-        System.Console.WriteLine($"{_country}");
+        System.Console.WriteLine($"{_streetNumber} {_street} Street \n{_city} \n{_state} \n{_country}");
     }
 
 

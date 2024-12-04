@@ -58,7 +58,9 @@ public class Order
     }
     public string GetShippingLabel()
     {
-        return "";
+        // .GetAddress().DisplayAddress2()
+        string shippingLabel =  $"{_customer.GetCustomerName()}\n{_customer.GetAddress().DisplayAddress2()}";
+        return shippingLabel;
     }
     
 }

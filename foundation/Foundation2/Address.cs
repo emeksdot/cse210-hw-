@@ -77,6 +77,10 @@ public class Address
     {
         System.Console.WriteLine($"{_streetNumber} {_street} Street \n{_city} \n{_state} \n{_country}");
     }
+    public string DisplayAddress2()
+    {
+        return $"{_streetNumber} {_street} Street \n{_city} \n{_state} \n{_country}";
+    }
 
 
     

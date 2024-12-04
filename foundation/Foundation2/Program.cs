@@ -17,6 +17,12 @@ class Program
         System.Console.WriteLine(ord1.GetProductList().Count);
         cust1Address.DisplayAddress();
         System.Console.WriteLine(ord1.GetPackingLabel());
+        System.Console.WriteLine();
+        System.Console.WriteLine();
+        System.Console.WriteLine(ord1.GetCustomer().GetAddress().DisplayAddress2());
+        System.Console.WriteLine();
+        System.Console.WriteLine();
+        System.Console.WriteLine(ord1.GetShippingLabel());
 
     }
 }

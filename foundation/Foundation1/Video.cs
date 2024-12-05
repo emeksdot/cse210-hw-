@@ -55,6 +55,11 @@ public class Video
 
     //
 
+    public List<Comment> GetListOfComments()
+    {
+        return _comments;
+    }
+
 
 
     public int NumberOfComments()

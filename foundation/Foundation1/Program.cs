@@ -7,7 +7,7 @@ class Program
         Console.WriteLine("Hello Foundation1 World!");
         List<Video> _videos = new List<Video>();
         Video vid1 = new Video("Essential Pots", "Kitchen Appliances", 188);
-        Video vid2 = new Video("Rice Cooker", "", 236);
+        Video vid2 = new Video("Rice Cooker", "Serena Home Electronics", 236);
         Video vid3 = new Video("Digital Alarms", "Aquatica", 197);
         Video vid4 = new Video("L.E.D. Projector", "Mildred Electronics", 125);
 
@@ -25,7 +25,7 @@ class Program
 
         Comment vid4com1 = new Comment("Kim", "I love the bluetooth capability.");
         Comment vid4com2 = new Comment("Johnson", "Does it have inbuilt speakers?");
-        Comment vid4com3 = new Comment("James", "Does it also use WiFi");
+        Comment vid4com3 = new Comment("James", "Does it also use WiFi???");
         Comment vid4com4 = new Comment("Bradley", "Good visuals");
 
         System.Console.WriteLine(_videos.Count);
@@ -56,7 +56,7 @@ class Program
 
         foreach (var video in _videos)
         {
-                System.Console.WriteLine($"Title: {video.GetTitle()}- Author: {video.GetAuthor()}- Length: {video.GetLength()}");            
+                System.Console.WriteLine($"Video => Title: {video.GetTitle()}- Author: {video.GetAuthor()}- Length: {video.GetLength()}");            
             foreach (var item in video.GetListOfComments())
             {    
                 System.Console.WriteLine($"{item.GetText()}\nby {item.GetName()} \n ");
@@ -64,6 +64,7 @@ class Program
             }
             
         }
-        System.Console.WriteLine(numberOfComments);
+        System.Console.WriteLine($"The total number of comments is: {numberOfComments}");
+        System.Console.WriteLine();
     }
 }

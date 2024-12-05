@@ -1,0 +1,48 @@
+In software development, encapsulation is the bundling together of data (called fields or member variables) that stores an object's state and the methods or member functions that manipulate the data to give the object its distinct behaviour. It is an essential principle in object-oriented programming. The major benefits of encapsulation is that access to the object's internal state is also controlled using access modifiers to limit the ability of outside code to manipulate the object's data to unacceptable values. In encapsulation only the essential parts or interfaces are accessible to the outside world. So the user of the code does not have to be bothered by the internal implementation. For example, a television set can be turned on or off (its state) by means of the buttons (its interface) on the front or on the television's remote without the user bothering with the internal electrical circuitry of the appliance.
+In code the television can be implemented as:
+
+public class Television
+{
+    private bool _powerOn;
+    private string _volume;
+
+    
+    public Customer(bool power, int volume)
+    {
+        _powerOn = false;
+        _volume = 0;           
+    }
+
+    public void PowerOnOff()
+    {
+        if(_powerOn == false)
+        {
+            _powerOn = true;
+        } else 
+        {
+            _powerOn = false; 
+        }       
+    }
+    public void IncreaseVolume() 
+    { 
+        _volume++;
+    }
+    public void DecreaseVolume() 
+    { 
+        if (_volume > 0)
+        {
+            _volume--;
+        }
+    }
+}
+
+Then to use this class we create an instance as follows:
+Television myTV = new Television();
+
+// To power it on or off we use the method as follows.
+myTV.PowerOnOff();
+
+// To increase the volume
+myTV.IncreaseVolume();
+
+From the foregoing we see that we do not manipulate the television's internal data fields _powerOn and _volume directly but through the interfaces represented by PowerOnOff() and IncreaseVolume().

@@ -41,6 +41,26 @@ public class Order
         }
     }
 
+    public int GetTotalQuantity()
+    {
+        int totalQty = 0;
+        foreach (var product in _products)
+        {
+           totalQty += product.GetQuantity(); 
+        }
+        return totalQty;
+    }
+
+    public decimal TotalProductsCost()
+    {
+        decimal totalPrice = 0m;
+        foreach (var product in _products)
+        {
+           totalPrice += product.GetPrice() * product.GetQuantity(); 
+        }
+        return totalPrice;
+    }
+
     public void DisplayTotalPrice()
     {
 
@@ -51,10 +71,20 @@ public class Order
         string packingLabel = "";
         foreach (var product in _products)
         {
-           packingLabel += product.GetName() + " " + product.GetId();
+           packingLabel += $" {product.GetName()}  {product.GetId()}\n";
         }
         return packingLabel;
     }
+    // public void GetPackingLabel()
+    // {
+    //     // string packingLabel = "";
+    //     foreach (var product in _products)
+    //     {
+    //     //    packingLabel += ;
+    //        System.Console.WriteLine(product.GetName() + " " + product.GetId());
+    //     }
+    //     // return packingLabel;
+    // }
     public string GetShippingLabel()
     {
         // .GetAddress().DisplayAddress2()

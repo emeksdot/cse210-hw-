@@ -18,6 +18,7 @@ public class Product
         _quantity = quantity;        
     }
 
+    //________Name_____________
     public string GetName()
     {
         return _name;
@@ -26,6 +27,8 @@ public class Product
     {
         _name = name;
     }
+
+        //________ID_____________
     public int GetId()
     {
         return _id;
@@ -34,6 +37,8 @@ public class Product
     {
          _id = id;
     }
+
+        //________Price_____________
     public decimal GetPrice()
     {
         return _pricePerUnit;
@@ -42,6 +47,8 @@ public class Product
     {
         _pricePerUnit = price;
     }
+
+        //________Quantity_____________
     public int GetQuantity()
     {
         return _quantity;
@@ -51,6 +58,7 @@ public class Product
         _quantity = quantity;
     }
 
+        //________Methods_____________
     public decimal ProductTotalPrice()
     {
         return _pricePerUnit * _quantity;

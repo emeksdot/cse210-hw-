@@ -14,6 +14,7 @@ public class Customer
         _address = address;
     }
 
+    //________Name_____________
     public string GetCustomerName()
     {
         return _customerName;
@@ -23,6 +24,7 @@ public class Customer
         _customerName = customerName;
     }
 
+        //________Address_____________
     public Address GetAddress()
     {
         return _address;
@@ -30,6 +32,11 @@ public class Customer
     public void SetAddress(Address address)
     {
         _address = address;
+    }
+
+    public bool LivesInUSA()
+    {
+        return _address.IsUSABased();
     }
     
 }

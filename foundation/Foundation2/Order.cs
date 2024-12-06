@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 public class Order
 {
     private Customer _customer;
-    // private List<Product> _products; // = new List<Product>();
     private List<Product> _products = new List<Product>();
 
     public Order(Customer customer)

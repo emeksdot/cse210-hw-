@@ -31,6 +31,12 @@ public class Comment
     {
         _text = text;
     }
+
+    //_____________Method__________
+    public void DisplayComment()
+    {
+        System.Console.WriteLine($"Comment:{_text} \nby {_name}");
+    }
     
 }
 

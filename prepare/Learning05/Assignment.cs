@@ -14,6 +14,7 @@ public class Assignment
         _topic = topic;        
     }
 
+    //_________Student Name_________
     public string GetStudentName()
     {
         return _studentName;
@@ -23,6 +24,7 @@ public class Assignment
         _studentName = name;
     }
 
+    //______________Topic___________
     public string GetTopic()
     {
         return _topic;
@@ -33,9 +35,10 @@ public class Assignment
     }
 
 
+    //_________Methods________________
     public string GetSummary()
     {
-        return $"Name: {GetStudentName()}  \nTopic: {GetTopic()}";
+        return $"{GetStudentName()} - {GetTopic()}";
     }
     
 }

@@ -12,6 +12,7 @@ public class ReflectingActivity : Activity
         : base(name, description, duration)
     {
         _prompts = new List<string>();
+
         _questions = new List<string>();
     }
 
@@ -38,22 +39,22 @@ public class ReflectingActivity : Activity
     }
 
     //____________Questions_____________
-    public void Run() { }
-
-    public string GetRandomPrompt()
+    public void Run()
     {
+        // DisplayStartingMessage();
+        ShowSpinner(6);
+        System.Console.WriteLine();
+        System.Console.WriteLine("Consider the following prompt: ");
+        System.Console.WriteLine();
         _prompts.Add("---Think of a time when you stood up for someone else.---");
         _prompts.Add("---Think of a time when you did something really difficult.---");
         _prompts.Add("---Think of a time when you helped someone in need.---");
         _prompts.Add("---Think of a time when you did something truly selfless.---");
+        DisplayPrompt();
+        System.Console.WriteLine();
+        System.Console.WriteLine("When you have something in mind, press enter to continue.");
+        string pause = Console.ReadLine();
 
-        Random guessNum = new Random();
-        int num = guessNum.Next(0, 4);
-        return _prompts[num];
-    }
-
-    public string GetRandomQuestion()
-    {
         _questions.Add("Why was this experience meaningful to you?");
         _questions.Add("Have you ever done anything like this before?");
         _questions.Add("How did you get started?");
@@ -67,13 +68,55 @@ public class ReflectingActivity : Activity
         );
         _questions.Add("What did you learn about yourself through this experience?");
         _questions.Add("How can you keep this experience in mind in the future?");
+        System.Console.WriteLine(
+            "Now ponder on each of the following questions as they related to this experience."
+        );
 
+        System.Console.Write("You may begin in: \b");
+        System.Console.WriteLine();
+        ShowCountDown(5);
+        System.Console.WriteLine();
+        DisplayQuestions();
+        System.Console.WriteLine();
+    }
+
+    public string GetRandomPrompt()
+    {
+        Random guessNum = new Random();
+        int num = guessNum.Next(0, 4);
+        return _prompts[num];
+    }
+
+    public string GetRandomQuestion()
+    {
         Random guessNum = new Random();
         int num = guessNum.Next(0, 5);
         return _prompts[num];
     }
 
-    public void DisplayPrompt() { }
+    public void DisplayPrompt()
+    {
+        System.Console.WriteLine(GetRandomPrompt());
+    }
 
-    public void DisplayQuestions() { }
+    public void DisplayQuestions()
+    {
+        foreach (var item in _questions)
+        {
+            System.Console.WriteLine($"> {item}");
+            Thread.Sleep(10000);
+        }
+    }
+
+    public override void DisplayStartingMessage()
+    {
+        
+    }
+
+    public override void DisplayEndingMessage()
+    {
+        System.Console.WriteLine("Well done!!!");
+        System.Console.WriteLine($"You completed {this.GetDuration()} seconds of the reflecting activity."
+        );
+    }
 }

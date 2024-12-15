@@ -46,15 +46,17 @@ public class ListingActivity : Activity
     public void Run() 
     {
         ShowSpinner(6);
+        System.Console.WriteLine("List as many responses as you can to the following prompt:");
+        GetRandomPrompt();
      }
 
     public void GetRandomPrompt()
     {
-        _prompts.Add("Who are those people that you deeply appreciate?");
-        _prompts.Add("What are personal strengths of yours?");
-        _prompts.Add("Who are people that you have helped this week?");
-        _prompts.Add("When have you felt the Holy Ghost this month?");
-        _prompts.Add("Who are some of your personal heroes?");
+        _prompts.Add("---Who are those people that you deeply appreciate?---");
+        _prompts.Add("---What are personal strengths of yours?---");
+        _prompts.Add("---Who are people that you have helped this week?---");
+        _prompts.Add("---When have you felt the Holy Ghost this month?---");
+        _prompts.Add("---Who are some of your personal heroes?---");
 
         Random guessNum = new Random();
         int num = guessNum.Next(0, 5);
@@ -72,5 +74,11 @@ public class ListingActivity : Activity
             input = Console.ReadLine();
         }
         return userList;
+    }
+
+    public override void DisplayEndingMessage()
+    {
+        System.Console.WriteLine("Well done!");
+        System.Console.WriteLine($"You have completed another {}seconds of the Listing activity.");
     }
 }

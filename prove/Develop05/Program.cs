@@ -141,7 +141,6 @@ class Program
                 DateTime currentTime = DateTime.Now;
                 while (currentTime < futureTime)
                 {
-                    System.Console.WriteLine("Hello");
                     breathAct.Run();
                     Thread.Sleep(10000);
                     currentTime = DateTime.Now;
@@ -149,7 +148,7 @@ class Program
 
                 break;
             }
-            else if (option == "2") 
+            else if (option == "2")
             {
                 Console.Clear();
                 System.Console.WriteLine("Welcome to the Reflecting Activity.");
@@ -157,25 +156,54 @@ class Program
                 System.Console.WriteLine(
                     "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life."
                 );
-
                 System.Console.WriteLine();
                 System.Console.WriteLine(
-                    "How long, in seconds would you like for your session to last? "
+                    "How long, in seconds would you like for your session to last?"
                 );
+
                 int refDuration = Convert.ToInt32(Console.ReadLine());
 
                 string refName = "Reflecting";
                 string refDesc =
-                    "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+                    "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
 
-                BreathingActivity breathAct = new BreathingActivity(brName, brDesc, brDuration);
+                ReflectingActivity refAct = new ReflectingActivity(refName, refDesc, refDuration);
 
-                Console.Clear();
+                // Console.Clear();
                 System.Console.WriteLine("Get ready...");
                 System.Console.WriteLine();
                 System.Console.WriteLine();
+
+                DateTime startTime = DateTime.Now;
+                DateTime futureTime = startTime.AddSeconds(refDuration);
+                DateTime currentTime = DateTime.Now;
+                while (currentTime < futureTime)
+                {
+                    refAct.Run();
+                    Thread.Sleep(1000);
+                    currentTime = DateTime.Now;
+                }
+
+                refAct.DisplayEndingMessage();
+                break;
+                // refAct.Run();
+            }
+            else if (option == "3") 
+            {
+                 System.Console.WriteLine("Welcome to the Listing Activity.");
+                System.Console.WriteLine();
+                System.Console.WriteLine(
+                    "This activity will help you reflect on the good things in your life by having you list many things as you can in a certain area."
+                );
+                System.Console.WriteLine();
+                System.Console.WriteLine(
+                    "How long, in seconds would you like for your session to last?"
+                );
+                int listDuration = Convert.ToInt32(Console.ReadLine());
+
+                ListingActivity listAct = new ListingActivity("Listing", "Reflect by listing", listDuration);
+
              }
-            else if (option == "3") { }
             else
             {
                 break;

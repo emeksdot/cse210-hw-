@@ -43,7 +43,10 @@ public class ListingActivity : Activity
     }
 
     //___________Methods____________
-    public void Run() { }
+    public void Run() 
+    {
+        ShowSpinner(6);
+     }
 
     public void GetRandomPrompt()
     {

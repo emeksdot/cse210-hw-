@@ -55,7 +55,7 @@ public class Activity
         Console.WriteLine("Hello Develop05 World!");
     }
 
-    public void DisplayEndingMessage()
+    public virtual void DisplayEndingMessage()
     {
         System.Console.WriteLine("You have completed the activity.");
     }
@@ -99,6 +99,19 @@ public class Activity
             Thread.Sleep(1000);
             System.Console.Write("\b \b");
             seconds--;
+        }
+    }
+
+    public void ActivityTimer()
+    {
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(_duration);
+        DateTime currentTime = DateTime.Now;
+        while (currentTime < futureTime)
+        {
+            System.Console.WriteLine("Hello");
+            Thread.Sleep(10000);
+            currentTime = DateTime.Now;
         }
     }
 }

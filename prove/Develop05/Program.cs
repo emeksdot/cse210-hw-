@@ -126,7 +126,8 @@ class Program
                 int brDuration = Convert.ToInt32(Console.ReadLine());
 
                 string brName = "Breathing";
-                string brDesc = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+                string brDesc =
+                    "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
 
                 BreathingActivity breathAct = new BreathingActivity(brName, brDesc, brDuration);
 
@@ -135,8 +136,48 @@ class Program
                 System.Console.WriteLine();
                 System.Console.WriteLine();
 
-                breathAct.Run();
+                DateTime startTime = DateTime.Now;
+                DateTime futureTime = startTime.AddSeconds(brDuration);
+                DateTime currentTime = DateTime.Now;
+                while (currentTime < futureTime)
+                {
+                    System.Console.WriteLine("Hello");
+                    breathAct.Run();
+                    Thread.Sleep(10000);
+                    currentTime = DateTime.Now;
+                }
 
+                break;
+            }
+            else if (option == "2") 
+            {
+                Console.Clear();
+                System.Console.WriteLine("Welcome to the Reflecting Activity.");
+                System.Console.WriteLine();
+                System.Console.WriteLine(
+                    "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life."
+                );
+
+                System.Console.WriteLine();
+                System.Console.WriteLine(
+                    "How long, in seconds would you like for your session to last? "
+                );
+                int refDuration = Convert.ToInt32(Console.ReadLine());
+
+                string refName = "Reflecting";
+                string refDesc =
+                    "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+
+                BreathingActivity breathAct = new BreathingActivity(brName, brDesc, brDuration);
+
+                Console.Clear();
+                System.Console.WriteLine("Get ready...");
+                System.Console.WriteLine();
+                System.Console.WriteLine();
+             }
+            else if (option == "3") { }
+            else
+            {
                 break;
             }
         }

@@ -188,11 +188,12 @@ class Program
                 break;
                 // refAct.Run();
             }
-            else if (option == "3") 
+            else if (option == "3")
             {
-                 System.Console.WriteLine("Welcome to the Listing Activity.");
-                System.Console.WriteLine();
-                System.Console.WriteLine(
+                Console.Clear();
+                Console.WriteLine("Welcome to the Listing Activity.");
+                Console.WriteLine();
+                Console.WriteLine(
                     "This activity will help you reflect on the good things in your life by having you list many things as you can in a certain area."
                 );
                 System.Console.WriteLine();
@@ -201,9 +202,30 @@ class Program
                 );
                 int listDuration = Convert.ToInt32(Console.ReadLine());
 
-                ListingActivity listAct = new ListingActivity("Listing", "Reflect by listing", listDuration);
+                ListingActivity listAct = new ListingActivity(
+                    "Listing",
+                    "Reflect by listing",
+                    listDuration,
+                    5
+                );
+                Console.Clear();
+                System.Console.WriteLine("Get ready...");
+                System.Console.WriteLine();
+                System.Console.WriteLine();
 
-             }
+                DateTime startTime = DateTime.Now;
+                DateTime futureTime = startTime.AddSeconds(listDuration);
+                DateTime currentTime = DateTime.Now;
+                while (currentTime < futureTime)
+                {
+                    listAct.Run();
+                    Thread.Sleep(1000);
+                    currentTime = DateTime.Now;
+                }
+
+                break;
+                
+            }
             else
             {
                 break;

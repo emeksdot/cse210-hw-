@@ -1,1 +1,66 @@
-Inheritance is another pillar or foundational principle of object-oriented programming where a class called a subclass or child class can inherit both member variables and methods from another class called the base/super or parent class. It enables reuse of functionality and even allows for the child class to extend its own functionality by adding other characteristics or behaviours not found in the super class.
+Inheritance is another pillar or foundational principle of object-oriented programming where a class called a subclass or child class can inherit both member variables and methods from another class called the base/super or parent class. It enables reuse of functionality and even allows for the child class to extend its own functionality by adding other characteristics or behaviours not found in the super class. It also assists in a software development principle called DRY which stands for Don't Repeat Yourself - which aims to reduce or eliminate redundant code, make the code cleaner, and can also reduce the amount of typing which can result in a smaller area where mistakes can emanate from. 
+Methods that were inherited from the base class can be overridden if they have the virtual keyword attached in the method declaration. Below is an implementation of Inheritance.
+public class CellPhone
+{
+    private string _charger;
+    private string _input;
+
+    public string GetCharger()
+    {
+        return _charger
+    }
+    public void SetCharger(string charger)
+    {
+        _charger = charger;
+    }
+    public string GetInput()
+    {
+        return _input;
+    }
+    public void SetInput(string input)
+    {
+        _input = input;
+    }
+
+    public Phones(string charger, string input)
+    {
+        _charger = charger;
+        _input = input;
+    }
+
+    public virtual void PlaceCall()
+    {
+        System.Console.WriteLine("Type number on input keyboard and press green button");
+        System.Console.WriteLine("The call has been placed...");
+
+    }
+    public virtual void ModeOfCharging()
+    {
+        System.Console.WriteLine("Connect wire to power supply...");
+
+    }
+}
+
+public class SmartPhone : CellPhone
+{
+    private string _touchscreen;
+
+
+    public SmartPhone(string charger, string input, string touchscreen) : base(charger, input)
+    {
+        _touchscreen = touchscreen;
+    }
+
+    public override void PlaceCall()
+    {
+        System.Console.WriteLine("Type number on input touchscreen or verbally call out the number and say \"Place call\"");
+        System.Console.WriteLine("The call has been placed...");
+
+    }
+
+    public override void ModeOfCharging()
+    {
+        System.Console.WriteLine("Connect wire to power supply or use wireless charging...");
+
+    }
+}

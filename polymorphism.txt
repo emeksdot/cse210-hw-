@@ -1,0 +1,83 @@
+In Object-Oriented Programming, polymorphism is a concept that allows accessing different types of objects by using the same interface or method, but the different objects have their own separate implementation of the method. 
+
+public class Animal
+{
+    private string _name;
+
+    public int Name { get; set; }
+
+    public virtual void Eat()
+    {
+        System.Console.WriteLine("The animal is eating...");
+
+    }
+    public virtual void Speak()
+    {
+        System.Console.WriteLine("The animal speaks...");
+
+    }
+}
+public class Lion : Animal
+{
+    private int _paws;
+
+    public Lion(string name, int paws) : base(name)
+    {
+        _paws = paws;
+        
+    }
+
+    public int Paws { get; set; }
+
+    public override void Eat()
+    {
+        System.Console.WriteLine("The Lion is eating flesh...");
+
+    }
+    public override void Speak()
+    {
+        System.Console.WriteLine("The Lion is roaring...");
+
+    }
+}
+public class Rooster
+{
+    private int _wings;
+
+    public Rooster(string name, int wings) : base(name)
+    {
+        _wings = wings;
+        
+    }
+
+    public int Wings { get; set; }
+
+    public override void Eat()
+    {
+        System.Console.WriteLine("The rooster is eating corn");
+
+    }
+    public override void Speak()
+    {
+        System.Console.WriteLine("The Rooster is crowing");
+
+    }
+}
+
+
+Lion lion1 = new Lion("Simba", 4);
+Rooster ck = new Rooster("Buzzer, 2);
+lion1.Eat();
+lion1.Speak();
+ck.Eat();
+ck.Speak();
+The above shows the implementation of an Animal class and 2 subclasses of Lion and Rooster.
+When this subclasses are instantiated and called with the Eat() and Speak() methods they will display their unique behaviors independent of each other. When the code above is run it will ouput:
+
+The Lion is eating flesh...
+
+The Lion is roaring...
+
+The rooster is eating corn
+
+The Rooster is crowing

@@ -71,7 +71,10 @@ class Program
                     // gm.Start();
                 }
             }
-            else if (menuOption == "2") { }
+            else if (menuOption == "2")
+            {
+                gm.ListGoalDetails();
+            }
             else if (menuOption == "3") { }
             else if (menuOption == "4") { }
             else if (menuOption == "5") { }

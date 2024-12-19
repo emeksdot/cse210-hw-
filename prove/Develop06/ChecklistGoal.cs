@@ -65,7 +65,10 @@ public class CheckListGoal : Goal
 
     public override void IsComplete() { }
 
-    public override void GetStringRepresentation() { }
+    public override void GetStringRepresentation() 
+    {
+        
+     }
 
     public override void GetDetailsString() { }
 }

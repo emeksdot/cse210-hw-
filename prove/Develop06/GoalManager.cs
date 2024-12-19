@@ -30,7 +30,6 @@ public class GoalManager
     public void Start()
     {
         Console.WriteLine("You have 0 points");
-        
     }
 
     public void DisplayPlayerInfo()
@@ -50,19 +49,19 @@ public class GoalManager
     // Method to list goal details
     public void ListGoalDetails()
     {
-        // foreach (var goal in _goals)
-        // {
-        //     Console.WriteLine(
-        //         $"{_goals.IndexOf(goal, _goals.IndexOf(goal)) + 1}. [ ] {goal.GetShortName()} ({goal.GetDescription()}) "
-        //     );
-        // }
-        for (int i = 0; i < _goals.Count; i++)
+        foreach (var goal in _goals)
         {
-            if (_goals.Count > 0)
-            {
-                Console.WriteLine($"{i + 1}. [ ] {_goals[i].GetShortName()} ({_goals[i].GetDescription()}) ");
-            }
+            Console.WriteLine(
+                $"{_goals.IndexOf(goal, _goals.IndexOf(goal)) + 1}. [ ] {goal.GetShortName()} ({goal.GetDescription()}) "
+            );
         }
+        // for (int i = 0; i < _goals.Count; i++)
+        // {
+        //     if (_goals.Count > 0)
+        //     {
+        //         Console.WriteLine($"{i + 1}. [ ] {_goals[i].GetShortName()} ({_goals[i].GetDescription()}) ");
+        //     }
+        // }
     }
 
     // Method to create a goal

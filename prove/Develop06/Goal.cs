@@ -47,4 +47,22 @@ public class Goal
     {
         _points = points;
     }
+
+    //________Methods___________
+    public virtual void RecordEvent()
+    {
+
+    }
+    public virtual void IsComplete()
+    {
+
+    }
+    public virtual void GetDetailsString()
+    {
+
+    }
+    public virtual void GetStringRepresentation()
+    {
+
+    }
 }
